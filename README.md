@@ -1,4 +1,4 @@
-# CryoFSL: a few-shot learning framework for robust protein particle picking in cryo-EM micrographs
+# CryoFSL: an annotation-efficient, few-shot learning framework for robust protein particle picking in cryo-EM micrographs
 
 CryoFSL is a **few-shot learning framework** designed for **automated protein particle picking in Cryo-Electron Microscopy (Cryo-EM) micrographs**.  
 Unlike traditional approaches that require large-scale training, CryoFSL achieves high accuracy with as few as **5 labeled micrographs per protein** by leveraging **SAM2 (Segment Anything Model v2) with adapter-based fine-tuning**.
