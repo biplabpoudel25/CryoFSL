@@ -78,8 +78,6 @@ class ImageFolder(Dataset):
             return Image.open(file).convert('RGB')
 
         
-
-# True running code from original author
 @register('paired-image-folders')
 class PairedImageFolders(Dataset):
 
