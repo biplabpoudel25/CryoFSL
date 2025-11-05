@@ -290,7 +290,7 @@ def override_config(config, args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', default="configs/cod-sam-vit-l.yaml")
-    parser.add_argument('--name', default='github_run_train_1')
+    parser.add_argument('--name', default='10028_few_shot')
     parser.add_argument('--shot', type=int, default=5, choices=[1, 5, 10], required=False,
                         help='Number of shots for few-shot training (1, 5, or 10)')
     parser.add_argument('--tag', default=None)
@@ -299,14 +299,14 @@ if __name__ == '__main__':
                         default=None, help="Path to trained checkpoint, leave empty to load SAM ckpt")
 
     # Arguments for training and validation images and labels
-    parser.add_argument('--train_images', type=str, default="/mnt/pixstor/data/bpbx2/SAM-Adapter-2/10028_temp/train/images/", help= 'path/to/train/images')
-    parser.add_argument('--train_labels', type=str, default="/mnt/pixstor/data/bpbx2/SAM-Adapter-2/10028_temp/train/labels/", help= 'path/to/train/labels')
-    parser.add_argument('--val_images', type=str, default="/mnt/pixstor/data/bpbx2/SAM-Adapter-2/10028_temp/valid/images/", help= 'path/to/valid/images')
-    parser.add_argument('--val_labels', type=str, default="/mnt/pixstor/data/bpbx2/SAM-Adapter-2/10028_temp/valid/labels/", help= 'path/to/valid/labels')
+    parser.add_argument('--train_images', type=str, default="./data/train/images/", help= 'path/to/train/images')
+    parser.add_argument('--train_labels', type=str, default="./data/train/labels/", help= 'path/to/train/labels')
+    parser.add_argument('--val_images', type=str, default="./data/valid/images/", help= 'path/to/valid/images')
+    parser.add_argument('--val_labels', type=str, default="./data/valid/labels/", help= 'path/to/valid/labels')
     parser.add_argument('--epochs', type=int, default=5000, help="Number of epochs")
     parser.add_argument('--sam_ckpt', type=str,
-                        default="sam_checkpoint/sam2_hiera_large.pt",
-                        help="Path to SAM checkpoint")
+                        default="./pretrained/sam2_hiera_large.pt",
+                        help="Path to SAM2 checkpoint")
 
     args = parser.parse_args()
 

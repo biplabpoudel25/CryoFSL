@@ -491,25 +491,21 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', default="configs/cod-sam-vit-l.yaml")
     parser.add_argument('--model',
-                        default="/mnt/pixstor/data/bpbx2/CryoFSL/checkpoints/5_shot/github_run_train_1/model_epoch_best.pth", help='path to  the trained model')
+                        default="./checkpoints/5_shot/10028_few_shot/model_epoch_best.pth", help='path to  the trained model')
     parser.add_argument('--shot', type=int, default=5, choices=[1, 5, 10], required=False,
                         help='Number of shots for few-shot training (1, 5, or 10)')
-    parser.add_argument('--protein_name', default='github_temp_test_1', help='EMPAIR ID of the protein')
+    parser.add_argument('--protein_name', default='10028', help='EMPAIR ID of the protein')
     parser.add_argument('--particle_radius', type=int, default=28, help='radius of the particle for given protein having images of size (1024, 1024)')
     parser.add_argument('--org_image_size', type=int, nargs=2, default=[4096, 4096], help='size of original images')
-    parser.add_argument('--sam_model_type', default='vit_h', help='type of sam model to use for mask generator')
-    parser.add_argument('--sam_ckpt',
-                        default="/cluster/pixstor/data/bpbx2/histopathology/model_checkpoints/sam_vit_h_4b8939.pth",
-                        help='checkpoint of sam model for mask generation')
-    parser.add_argument('--output_dir', default='outputs',
+    parser.add_argument('--output_dir', default='./data_outputs',
                         help='save the output images and information')
 
-    # Arguments for training and validation images and labels
+    # Arguments for test images and labels
     parser.add_argument('--test_images', type=str,
-                        default="/mnt/pixstor/data/bpbx2/SAM-Adapter-2/10028_temp/valid/images/",
+                        default="./data/test/images/",
                         help="Path to test/images")
     parser.add_argument('--test_labels', type=str,
-                        default="/mnt/pixstor/data/bpbx2/SAM-Adapter-2/10028_temp/valid/labels/",
+                        default="./data/test/labels/",
                         help="Path to test/labels")
 
     args = parser.parse_args()
