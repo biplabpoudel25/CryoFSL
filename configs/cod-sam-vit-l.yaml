@@ -2,8 +2,8 @@ train_dataset:
   dataset:
     name: paired-image-folders
     args:
-      root_path_1: /cluster/pixstor/xudong-lab/biplab/CryoPPP_dataset/Few_shots/5_shot/10017/train/images/
-      root_path_2: /cluster/pixstor/xudong-lab/biplab/CryoPPP_dataset/split_mask_data/0.5/10017/
+      root_path_1: /data/train/images/
+      root_path_2: /data/train/labels/
       cache: none
       split_key: train
   wrapper:
@@ -16,8 +16,8 @@ val_dataset:
   dataset:
     name: paired-image-folders
     args:
-      root_path_1: /cluster/pixstor/xudong-lab/biplab/CryoPPP_dataset/Few_shots/5_shot/10017/valid/images/
-      root_path_2: /cluster/pixstor/xudong-lab/biplab/CryoPPP_dataset/Few_shots/5_shot/10017/valid/labels/
+      root_path_1: /data/valid/images/
+      root_path_2: /data/valid/labels/
       cache: none
       split_key: test
   wrapper:
@@ -29,8 +29,8 @@ test_dataset:
   dataset:
     name: paired-image-folders
     args:
-      root_path_1: /cluster/pixstor/xudong-lab/biplab/CryoPPP_dataset/10017/test/images/
-      root_path_2: /cluster/pixstor/xudong-lab/biplab/CryoPPP_dataset/10017/test/labels/
+      root_path_1: /data/test/images/
+      root_path_2: /data/test/labels/
       cache: none
       split_key: test
   wrapper:
@@ -39,7 +39,7 @@ test_dataset:
       inp_size: 1024
   batch_size: 1
 eval_type: cryoppp
-sam_checkpoint: /mnt/pixstor/data/bpbx2/SAM-Adapter-2/pretrained/sam2_hiera_large.pt
+sam_checkpoint: /pretrained/sam2_hiera_large.pt
 data_norm:
   inp:
     sub:

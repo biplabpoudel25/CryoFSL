@@ -111,6 +111,7 @@ The test code will produce the following results in **outputs** folder:
 You can directly use the generated `.star` file in CryoSPARC or RELION for downstream 3D reconstruction.
 
 ### 6. 🚀 Steps to Reproduce Results
+
 Follow these steps to reproduce the results presented in the **CryoFSL** paper from **CryoPPP dataset**.
 
 1️⃣ **Download Dataset (Example for EMPIAR-10028)**
@@ -147,7 +148,8 @@ CryoPPP_dataset/10028/outputs/
 ```
 
 3️⃣ Prepare Data Splits
-Divide the processed dataset into **train, validation, and test** subsets following the configurations shown earlier (in Data organization).
+
+Divide the processed dataset into **train, validation, and test** subsets following the configurations shown earlier (in **Data organization**).
 
 4️⃣ Download SAM2 Pretrained Checkpoint
 
@@ -157,7 +159,10 @@ Download the pretrained **SAM2 (hiera-large)** checkpoint from the official repo
 
 5️⃣ Train and test the model
 
-Follow the training steps as explained above. Example of training and testing on 10028 dataset is shown in the following notebook.
+Follow the training steps as explained above. 
+
+**Example of training and testing on 10028 dataset is shown in the following notebook.**
+
 👉 **Train:** [train_notebook.ipynb](tutorial/train_notebook.ipynb)  
 👉 **Test:** [test_notebook.ipynb](tutorial/test_notebook.ipynb)
 
